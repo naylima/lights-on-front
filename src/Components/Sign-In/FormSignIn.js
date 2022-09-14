@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UserContext from "../../Common/Contexts/UserContext";
 
 export default function FormSignIn(){
 
     const [form, setForm] = useState({})
-    const {setUser} = useContext(UserContext)
     const navigate = useNavigate()
 
     function handleForm({ name, value }){
@@ -24,7 +22,11 @@ export default function FormSignIn(){
             ...form,
         }
         const promise = ""//Aqui entra a requisição post de SignIn
-        promise.then((res) => {setUser(res.data); navigate('/home');console.log(res.data)})
+        promise.then((res) => {
+            const token = res.data; 
+            localStorage.setItem("lights-on", JSON.stringify({token: token}));
+            navigate('/home');
+        })
         promise.catch(() => {alert('Dados inválidos, tente novamente');})
 
     }
@@ -78,7 +80,7 @@ input:focus{
 
 const LButton = styled.button`
     border: none;
-    width: 90vw;
+    width: 60vw;
     height: 7vh;
     background-color: #e09145;
     display: flex;

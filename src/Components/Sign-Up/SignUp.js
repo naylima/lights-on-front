@@ -8,7 +8,7 @@ export default function SignUp() {
         <SignUpWrap>
             <img src={logo} alt="logo" />
             <FormSignUp/>
-            <Link to="/">
+            <Link to="/sign-in">
             <span>Já tem uma conta? Entre agora!</span>
             </Link>
         </SignUpWrap>

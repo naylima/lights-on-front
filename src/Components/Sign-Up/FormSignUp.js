@@ -26,7 +26,7 @@ export default function FormSignUp() {
             ...form,
         }
         const promise = "" // aqui entra requisição post de signup
-        promise.then(() => {navigate('/');})
+        promise.then(() => {navigate('/sign-in');})
         promise.catch(() => {alert('Dados inválidos, tente novamente');})
 
     }
@@ -92,7 +92,7 @@ input:focus{
 
 const LButton = styled.button`
     border: none;
-    width: 90vw;
+    width: 60vw;
     height: 7vh;
     background-color: #e09145;
     display: flex;
