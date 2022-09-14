@@ -100,7 +100,7 @@ const LButton = styled.button`
     align-items: center;
     text-align: center;
     border-radius: 5px;
-    margin-top: 2vh;
+    margin-top: 3vh;
     cursor: pointer;
 div {
     font-family: 'Hind', sans-serif;
