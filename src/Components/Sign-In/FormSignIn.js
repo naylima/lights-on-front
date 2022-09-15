@@ -24,7 +24,7 @@ export default function FormSignIn(){
         }
         const promise = signIn(body)
         promise.then((res) => {
-            const token = res.data; 
+            const token = res.data.token; 
             localStorage.setItem("lightson", JSON.stringify({token: token}));
             navigate('/home');
         })

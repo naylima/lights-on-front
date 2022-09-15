@@ -9,7 +9,7 @@ import Home from "./Home/Home.js";
 
 export default function App() {
 
-    const [cart, setCart] = useState({})
+    const [cart, setCart] = useState([])
 
     return(
 <>

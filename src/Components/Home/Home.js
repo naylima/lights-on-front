@@ -11,7 +11,7 @@ import Cart from '../Cart/Cart';
 export default function Home () {
 
     const [products, setProducts] = useState([]);
-    const [showCart, setShowCart] = useState(true); //precisa ser false
+    const [showCart, setShowCart] = useState(false);
 
     useEffect(() => {
 

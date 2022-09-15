@@ -35,5 +35,11 @@ function getCartProducts() {
   return request;
 }
 
-export { signIn, signUp, getProducts, getCartProducts };
+function addToCart(body) {
+  const config = createHeaders()
+  const request = axios.post(`${BASE_URL}/cart`, body, config);
+  return request;
+}
+
+export { signIn, signUp, getProducts, getCartProducts, addToCart };
 
