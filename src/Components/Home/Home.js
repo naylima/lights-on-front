@@ -5,11 +5,13 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 import { BsBag } from 'react-icons/bs';
 import Products from './Products';
+import Cart from '../Cart/Cart';
 
 
 export default function Home () {
 
     const [products, setProducts] = useState([]);
+    const [showCart, setShowCart] = useState(false);
 
     useEffect(() => {
 
@@ -30,8 +32,10 @@ export default function Home () {
             <Footer>
                 <AiOutlineHome className="icon" />
                 <BsSearch className="icon" />
-                <BsBag className="icon" />
+                <BsBag className="icon" onClick={()=>{setShowCart(true);console.log(showCart)}}/>
             </Footer>
+
+            <Cart disable={showCart} setDisable={setShowCart}/>
 
         </>
     )

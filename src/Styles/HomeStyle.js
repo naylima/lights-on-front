@@ -56,6 +56,7 @@ export const ProductCard = styled.div`
         padding: 8px;
         object-fit: cover;
         cursor: pointer;
+        transition: all 0.2s;
 
         :hover {
             filter: brightness(1.2);

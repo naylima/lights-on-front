@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { signUp } from "../../Common/Service/Service";
 
 export default function FormSignUp() {
 
@@ -25,7 +26,7 @@ export default function FormSignUp() {
         const body = {
             ...form,
         }
-        const promise = "" // aqui entra requisição post de signup
+        const promise = signUp(body)
         promise.then(() => {navigate('/sign-in');})
         promise.catch(() => {alert('Dados inválidos, tente novamente');})
 
@@ -100,7 +101,7 @@ const LButton = styled.button`
     align-items: center;
     text-align: center;
     border-radius: 5px;
-    margin-top: 2vh;
+    margin-top: 3vh;
     cursor: pointer;
 div {
     font-family: 'Hind', sans-serif;
