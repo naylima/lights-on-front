@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import CartContext from "../Contexts/CartContext.js";
 import GlobalStyle from "../Styles/GlobalStyle.js";
 import AuthSelector from "./AuthSelect.js";
 import SignIn from "./Sign-In/SignIn.js";
@@ -7,9 +9,12 @@ import Home from "./Home/Home.js";
 
 export default function App() {
 
+    const [cart, setCart] = useState({})
+
     return(
 <>
     <GlobalStyle />
+        <CartContext.Provider value={{ cart, setCart }}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<AuthSelector />} ></Route>
@@ -18,6 +23,7 @@ export default function App() {
                     <Route path="/home" element={<Home />}></Route>
                 </Routes>
             </BrowserRouter>
+        </CartContext.Provider>
 </>
     )
 }

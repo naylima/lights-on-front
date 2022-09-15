@@ -14,10 +14,26 @@ function createHeaders() {
   return config;
 }
 
+function signIn (body) {
+  const promise = axios.post(`${BASE_URL}/sign-in`, body);
+  return promise;
+}
+
+function signUp (body) {
+  const promise = axios.post(`${BASE_URL}/sign-up`, body);
+  return promise;
+}
+
 function getProducts () {
     const request = axios.get(`${BASE_URL}/products`);
     return request;
 }
 
-export { getProducts };
+function getCartProducts() {
+  const config = createHeaders()
+  const request = axios.get(`${BASE_URL}/cart`, config);
+  return request;
+}
+
+export { signIn, signUp, getProducts, getCartProducts };
 

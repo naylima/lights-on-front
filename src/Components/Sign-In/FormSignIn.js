@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { signIn } from "../../Common/Service/Service";
 
 export default function FormSignIn(){
 
@@ -21,10 +22,10 @@ export default function FormSignIn(){
         const body = {
             ...form,
         }
-        const promise = ""//Aqui entra a requisição post de SignIn
+        const promise = signIn(body)
         promise.then((res) => {
             const token = res.data; 
-            localStorage.setItem("lights-on", JSON.stringify({token: token}));
+            localStorage.setItem("lightson", JSON.stringify({token: token}));
             navigate('/home');
         })
         promise.catch(() => {alert('Dados inválidos, tente novamente');})
