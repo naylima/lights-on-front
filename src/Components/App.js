@@ -6,6 +6,7 @@ import AuthSelector from "./AuthSelect.js";
 import SignIn from "./Sign-In/SignIn.js";
 import SignUp from "./Sign-Up/SignUp.js";
 import Home from "./Home/Home.js";
+import Checkout from "./Checkout/Checkout.js";
 
 export default function App() {
 
@@ -21,6 +22,7 @@ export default function App() {
                     <Route path="/sign-in" element={<SignIn />} ></Route>
                     <Route path="/sign-up" element={<SignUp />} ></Route>
                     <Route path="/home" element={<Home />}></Route>
+                    <Route path="/checkout" element={<Checkout />}></Route>
                 </Routes>
             </BrowserRouter>
         </CartContext.Provider>
