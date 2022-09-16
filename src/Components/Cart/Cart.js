@@ -27,7 +27,7 @@ export default function Cart({disable, setDisable}) {
                 <h1>My products</h1>
                 
                 <CartProductsContainer>
-                    {cart.length > 0 ? cart.map((item, id)=><CartProductCard key={id} image={item.url} name={item.title} price={item.price}/>) : <h6>You don't have any products selected yet</h6>}
+                    {cart.length > 0 ? cart.map((item, id)=><CartProductCard key={id} _id={item._id} image={item.url} name={item.title} price={item.price}/>) : <h6>You don't have any products selected yet</h6>}
                 </CartProductsContainer>
                 <CheckOut>
                 <TotalSum><h3>TOTAL</h3><h2>${totalSum}</h2></TotalSum>
