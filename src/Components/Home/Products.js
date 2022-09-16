@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import CartContext from "../../Contexts/CartContext";
-import { getCartProducts } from "../../Common/Service/Service";
+import { getCartProducts, addToCart } from "../../Common/Service/Service";
 import { ProductCard } from '../../Styles/HomeStyle';
 import { BsPlusCircle } from 'react-icons/bs';
-import { addToCart } from '../../Common/Service/Service';
+
 
 export default function Products ({products}) {
 
@@ -19,7 +19,7 @@ export default function Products ({products}) {
                     <span>{product.price}</span>
                     <BsPlusCircle className="plus" onClick={()=>{
                         const promise = addToCart(product);
-                        promise.then(getCartProducts().then(res=>setCart(res.data)))
+                        promise.then(getCartProducts().then(res=>{setCart(res.data);console.log(res.data);}))
                         }}/>
                 </div>
             </ProductCard>
