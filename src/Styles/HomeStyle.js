@@ -9,6 +9,11 @@ export const Header = styled.div `
     justify-content: center;
     z-index: 1;
 
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,1)),
+    url("https://images2.alphacoders.com/108/1085302.jpg");
+    background-position: center;
+    background-size: cover;
+
     background-color: #17181D;
     border-bottom: 1px solid #e09145;
 
@@ -56,7 +61,7 @@ export const ProductCard = styled.div`
         padding: 8px;
         object-fit: cover;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: hover .2s;
 
         :hover {
             filter: brightness(1.2);
@@ -71,9 +76,10 @@ export const ProductCard = styled.div`
     p {
         padding: 4px 8px;
         font-family: 'hind';
-        font-size: 16px;
+        font-size: 17px;
         font-weight: 500;
-        color: #E09145;
+        color: #fcd9b8;
+        cursor: pointer;
     }
 
     >div {
@@ -83,15 +89,15 @@ export const ProductCard = styled.div`
         align-items: center;
         justify-content: space-between;
 
-        color: #fcd9b8;
+        color: #e09145;
 
         span {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 500;
         }
 
         .plus {
-            font-size: 20px;
+            font-size: 22px;
             cursor: pointer;
 
             :active {

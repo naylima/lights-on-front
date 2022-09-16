@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://lights-on-back.herokuapp.com';
 
 function createHeaders() {
 
@@ -25,8 +25,8 @@ function signUp (body) {
 }
 
 function getProducts () {
-    const request = axios.get(`${BASE_URL}/products`);
-    return request;
+  const request = axios.get(`${BASE_URL}/products`);
+  return request;
 }
 
 function getCartProducts() {
