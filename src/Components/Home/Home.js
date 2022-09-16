@@ -1,16 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getProducts } from '../../Common/Service/Service';
-import { Header, Container, Footer } from '../../Styles/HomeStyle';
-import { AiOutlineHome } from 'react-icons/ai';
-import { BsSearch, BsBag  } from 'react-icons/bs';
+import { Header, Container } from '../../Styles/HomeStyle';
 import Products from '../Products/Products.js';
-import Cart from '../Cart/Cart';
-
+import Footer from '../Footer/Footer.js';
 
 export default function Home () {
 
     const [products, setProducts] = useState([]);
-    const [showCart, setShowCart] = useState(false);
 
     useEffect(() => {
         const promise = getProducts();
@@ -28,14 +24,8 @@ export default function Home () {
                     <Products product={product} id={id}/>
                 )}
             </Container>
-
-            <Footer>
-                <AiOutlineHome className="icon"/>
-                <BsSearch className="icon" />
-                <BsBag className="icon" onClick={()=>{setShowCart(true)}}/>
-            </Footer>
-
-            <Cart disable={showCart} setDisable={setShowCart}/>
+            
+            <Footer/>
 
         </>
     )
