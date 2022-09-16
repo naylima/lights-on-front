@@ -2,8 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ProductCard } from '../../Styles/HomeStyle';
 import { BsPlusCircle } from 'react-icons/bs';
-import { getCartProducts } from "../../Common/Service/Service";
-import { addToCart } from '../../Common/Service/Service';
+import { addToCart, getCartProducts } from '../../Common/Service/Service';
 import CartContext from "../../Contexts/CartContext";
 
 export default function Products ({product, id}) {

@@ -14,10 +14,7 @@ export default function Home () {
 
     useEffect(() => {
         const promise = getProducts();
-        promise.then((res => {
-            console.log(res.data)
-            setProducts(res.data)
-        }))
+        promise.then((res => setProducts(res.data)))
     }, []);
 
     return (
