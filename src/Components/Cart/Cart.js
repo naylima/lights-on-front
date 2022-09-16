@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { useNavigate } from "react-router-dom";
 import { useEffect, useContext } from "react";
 import CartContext from "../../Contexts/CartContext";
 import CartProductCard from "./CartProductCard";
@@ -7,12 +8,20 @@ import { getCartProducts } from "../../Common/Service/Service";
 export default function Cart({disable, setDisable}) {
 
     const {cart, setCart} = useContext(CartContext)
-    console.log(cart)
+    const navigate = useNavigate()
+    
     useEffect(() => {
 
         const promise = getCartProducts();
         promise.then((res => setCart(res.data)))
     }, []);
+
+    function goToCheckout(){
+        if(cart.length <= 0){
+            return alert("You haven't selected any products yet")
+        }
+        navigate("/checkout");
+    }
     
     let totalSum = 0
 
@@ -31,7 +40,7 @@ export default function Cart({disable, setDisable}) {
                 </CartProductsContainer>
                 <CheckOut>
                 <TotalSum><h3>TOTAL</h3><h2>${totalSum}</h2></TotalSum>
-                <LButton>
+                <LButton activate={cart.length > 0} onClick={()=> goToCheckout()}>
                     <div>Checkout</div>
                 </LButton>
                 </CheckOut>
@@ -80,7 +89,7 @@ const LButton = styled.button`
     border: none;
     width: 50vw;
     height: 7vh;
-    background-color: #e09145;
+    background-color: ${props => props.activate ? "#e09145" : "#b8926e" };
     display: flex;
     justify-content: center;
     align-items: center;
