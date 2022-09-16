@@ -1,10 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import { ProductCard } from '../../Styles/HomeStyle';
 import { BsPlusCircle } from 'react-icons/bs';
+import { getCartProducts } from "../../Common/Service/Service";
+import { addToCart } from '../../Common/Service/Service';
+import CartContext from "../../Contexts/CartContext";
 
 export default function Products ({product, id}) {
 
     const navigate = useNavigate();
+    const { setCart } = useContext(CartContext);
 
     return (
 
@@ -38,7 +43,13 @@ export default function Products ({product, id}) {
             </p>
             <div>
                 <span>{product.price}</span>
-                <BsPlusCircle className="plus" />
+                <BsPlusCircle 
+                    className="plus" 
+                    onClick={()=>{
+                        const promise = addToCart(product);
+                        promise.then(getCartProducts().then(res=>setCart(res.data)))
+                    }}
+                />
             </div>
         </ProductCard>
     )
