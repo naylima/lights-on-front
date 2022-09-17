@@ -1,4 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "../../Contexts/CartContext";
+import { addToCart, getCartProducts } from "../../Common/Service/Service";
 import styled from "styled-components";
 import { BsArrowLeft, BsPlusCircle } from 'react-icons/bs';
 import Footer from "../Footer/Footer";
@@ -6,13 +9,17 @@ import Footer from "../Footer/Footer";
 export default function Product () {
 
     const navigate = useNavigate();
-    const { url, title, price, description } =  useLocation().state;
+    const {setCart} = useContext(CartContext)
+    const { product, url, title, price, description } =  useLocation().state;
     
     return (
         <Main>
             <ProductContainer url={url}>
                 <BsArrowLeft className="icon" onClick={()=> navigate("/home")}/>
-                <BsPlusCircle className="plus"/>
+                <BsPlusCircle className="plus" onClick={()=>{
+                        const promise = addToCart(product);
+                        promise.then(getCartProducts().then(res=>setCart(res.data)))
+                    }}/>
             </ProductContainer>
 
             <Description>
