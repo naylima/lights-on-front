@@ -18,6 +18,7 @@ export default function Products ({product, id}) {
                 onClick={() => {
                     navigate(`/${product._id}`,
                         {state: {
+                            product: product,
                             url: product.url,
                             title: product.title,
                             price: product.price,
@@ -45,9 +46,10 @@ export default function Products ({product, id}) {
                 <span>{product.price}</span>
                 <BsPlusCircle 
                     className="plus" 
-                    onClick={()=>{
-                        const promise = addToCart(product);
-                        promise.then(getCartProducts().then(res=>setCart(res.data)))
+                    onClick={async ()=>{
+                        await addToCart(product);
+                        const res = await getCartProducts();
+                        setCart(res.data)
                     }}
                 />
             </div>

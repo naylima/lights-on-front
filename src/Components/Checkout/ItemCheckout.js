@@ -26,6 +26,7 @@ p{
     font-size: 22px;
     font-weight: bold;
     color: #e09145;
+    background-color: #17181D;
     border: 1px solid #e09145;
     border-radius: 5px;
     padding: 3px 3px 0 3px;

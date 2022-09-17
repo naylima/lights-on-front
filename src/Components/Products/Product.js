@@ -16,9 +16,10 @@ export default function Product () {
         <Main>
             <ProductContainer url={url}>
                 <BsArrowLeft className="icon" onClick={()=> navigate("/home")}/>
-                <BsPlusCircle className="plus" onClick={()=>{
-                        const promise = addToCart(product);
-                        promise.then(getCartProducts().then(res=>setCart(res.data)))
+                <BsPlusCircle className="plus" onClick={async ()=>{
+                        await addToCart(product);
+                        const res = await getCartProducts();
+                        setCart(res.data)
                     }}/>
             </ProductContainer>
 

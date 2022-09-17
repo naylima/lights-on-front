@@ -11,7 +11,6 @@ export default function Cart({disable, setDisable}) {
     const navigate = useNavigate()
     
     useEffect(() => {
-
         const promise = getCartProducts();
         promise.then((res => setCart(res.data)))
     }, []);
