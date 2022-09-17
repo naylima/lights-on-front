@@ -1,17 +1,23 @@
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../../Common/Service/Service";
+import { useNavigate } from "react-router-dom";
 import { BsCheckCircle } from 'react-icons/bs';
 
 export default function Success () {
 
     const navigate = useNavigate();
 
+    function ExitServer () {
+        const promise = logout();
+        promise.then(() => navigate("/"));
+    }    
+
     return (
         <Wrapper>
             <BsCheckCircle className="check" />
             <h1>Your Order is Confirmed</h1>
             <h2>Thank You For Your Order</h2>
-            <div>Done</div>
+            <div onClick={() => ExitServer()}>Done</div>
             <p onClick={() => navigate("/home")}>Exit to Home</p>
         </Wrapper>
     )
@@ -70,7 +76,7 @@ const Wrapper = styled.div`
         :hover {
             filter: brightness(120%);
         }
-        
+
         :active {
             transform: scale(0.98);
             box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);

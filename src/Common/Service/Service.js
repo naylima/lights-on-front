@@ -53,5 +53,21 @@ function checkOutCart() {
   return request;
 }
 
-export { signIn, signUp, getProducts, getCartProducts, addToCart, deleteFromCart, checkOutCart };
+function logout() {
+  const config = createHeaders();
+  const request = axios.delete(`${BASE_URL}/logout`, config);
+  return request;
+}
+
+
+export { 
+  signIn, 
+  signUp, 
+  getProducts, 
+  getCartProducts, 
+  addToCart, 
+  deleteFromCart, 
+  checkOutCart, 
+  logout 
+};
 
