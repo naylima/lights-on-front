@@ -29,6 +29,11 @@ function getProducts () {
   return request;
 }
 
+function searchProducts(query) {
+  const request = axios.get(`${BASE_URL}/products?keyword=${query}`);
+  return request;
+}
+
 function getCartProducts() {
   const config = createHeaders()
   const request = axios.get(`${BASE_URL}/cart`, config);
@@ -63,7 +68,8 @@ function logout() {
 export { 
   signIn, 
   signUp, 
-  getProducts, 
+  getProducts,
+  searchProducts,
   getCartProducts, 
   addToCart, 
   deleteFromCart, 

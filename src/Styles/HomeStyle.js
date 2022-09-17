@@ -36,6 +36,7 @@ export const Header = styled.div `
 export const Container = styled.div`
 
     width: 100%;
+    min-height: 100vh;
     margin-top: 100px;
     padding-bottom: 90px;
     display: flex;
@@ -47,7 +48,7 @@ export const Container = styled.div`
 export const ProductCard = styled.div`
 
     width: 160px;
-    height: auto;
+    height: 250px;
     margin: 10px 15px;
     display: flex;
     flex-direction: column;

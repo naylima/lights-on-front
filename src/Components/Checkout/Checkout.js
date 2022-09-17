@@ -29,7 +29,7 @@ export default function Checkout() {
                     <div onClick={()=> navigate('/home')}>Cancel</div>
                 </CancelButton>
                 <ConfirmButton>
-                    <div onClick={async()=> {await checkOutCart(); navigate('/home')}}>Confirm and checkout products</div>
+                    <div onClick={async()=> {await checkOutCart(); navigate('/success')}}>Confirm and checkout products</div>
                 </ConfirmButton>
             </ButtonsWrapper>
         </Wrapper>
