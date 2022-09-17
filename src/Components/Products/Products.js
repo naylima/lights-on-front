@@ -30,6 +30,7 @@ export default function Products ({product, id}) {
                 onClick={() => {
                     navigate(`/${product._id}`,
                         {state: {
+                            product: product,
                             url: product.url,
                             title: product.title,
                             price: product.price,
