@@ -59,7 +59,7 @@ const SearchBar = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border-bottom: 1px solid #FCD9B8;
+    border-bottom: 1px solid #E09145;
 
     font-size: 22px;
     font-weight: 400;
