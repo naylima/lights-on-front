@@ -108,7 +108,7 @@ export const ProductCard = styled.div`
     }
 
 `
-export const Footer = styled.div`
+export const FooterStyle = styled.div`
     
     width: 100%;
     height: 70px;

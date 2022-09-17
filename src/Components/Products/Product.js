@@ -1,8 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { Footer } from "../../Styles/HomeStyle";
-import { AiOutlineHome } from 'react-icons/ai';
-import { BsSearch, BsBag, BsArrowLeft, BsPlusCircle } from 'react-icons/bs';
+import { BsArrowLeft, BsPlusCircle } from 'react-icons/bs';
+import Footer from "../Footer/Footer";
 
 export default function Product () {
 
@@ -24,11 +23,8 @@ export default function Product () {
                 <span>{description}</span>
             </Description>
 
-            <Footer>
-                <AiOutlineHome className="icon" onClick={()=> navigate("/home")} />
-                <BsSearch className="icon" />
-                <BsBag className="icon" />
-            </Footer>
+            <Footer/>
+
         </Main>
     )
 }
