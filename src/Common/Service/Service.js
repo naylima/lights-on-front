@@ -41,5 +41,17 @@ function addToCart(body) {
   return request;
 }
 
-export { signIn, signUp, getProducts, getCartProducts, addToCart };
+function deleteFromCart(param) {
+  const config = createHeaders()
+  const request = axios.delete(`${BASE_URL}/cart/${param}`, config);
+  return request;
+}
+
+function checkOutCart() {
+  const config = createHeaders()
+  const request = axios.delete(`${BASE_URL}/cart`, config);
+  return request;
+}
+
+export { signIn, signUp, getProducts, getCartProducts, addToCart, deleteFromCart, checkOutCart };
 

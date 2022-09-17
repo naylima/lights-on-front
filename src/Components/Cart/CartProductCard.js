@@ -1,6 +1,13 @@
 import styled from "styled-components"
+import { useContext } from "react";
+import CartContext from "../../Contexts/CartContext";
+import { getCartProducts, deleteFromCart } from "../../Common/Service/Service";
+import { AiOutlineCloseCircle } from "react-icons/ai"
 
-export default function CartProductCard({image,name,price}) {
+export default function CartProductCard({_id,image,name,price}) {
+
+    const {setCart} = useContext(CartContext)
+
 
     return(
         <CartProductWrapper>
@@ -9,6 +16,11 @@ export default function CartProductCard({image,name,price}) {
                 <h4>{name}</h4>
                 <h5>{price}</h5>
             </ProductInfo>
+            <AiOutlineCloseCircle className="icon" onClick={async ()=>{
+                        await deleteFromCart(_id);
+                        const products = await getCartProducts();
+                        setCart(products.data);
+                        }}/>
         </CartProductWrapper>
     )
 }
@@ -27,6 +39,17 @@ img{
     width: 30%;
     object-fit: cover;
 }
+.icon {
+        font-size: 23px;
+        color: #fcd9b8;
+        cursor: pointer;
+        margin-left: 4.5vw;
+        transition: all 0.2s;
+
+        :hover {
+            color: red;
+        }
+    }
 `
 
 const ProductInfo = styled.div`
