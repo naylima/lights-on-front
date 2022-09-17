@@ -8,6 +8,7 @@ import SignUp from "./Sign-Up/SignUp.js";
 import Home from "./Home/Home.js";
 import Product from "./Products/Product.js";
 import Checkout from "./Checkout/Checkout.js";
+import Success from "./Success/Success.js";
 
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
                     <Route path="/home" element={<Home />}></Route>
                     <Route path="/:productId" element={<Product />}></Route>
                     <Route path="/checkout" element={<Checkout />}></Route>
+                    <Route path="/success" element={<Success />}></Route>
                 </Routes>
             </BrowserRouter>
         </CartContext.Provider>
