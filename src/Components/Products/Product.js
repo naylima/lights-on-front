@@ -15,42 +15,43 @@ export default function Product () {
     const [showAlert, setShowAlert] = useState(false);
     
     return (
-        <Main>
-            <ProductContainer url={url}>
-                <BsArrowLeft className="icon" onClick={()=> navigate("/home")}/>
-                <BsPlusCircle className="plus" onClick={async ()=>{
-                        setShowAlert(true);
-                        await addToCart(product);
-                        const res = await getCartProducts();
-                        setCart(res.data)
-                    }}/>
-            </ProductContainer>
+        <>
+            <Main>
+                <ProductContainer url={url}>
+                    <BsArrowLeft className="icon" onClick={()=> navigate("/home")}/>
+                    <BsPlusCircle className="plus" onClick={async ()=>{
+                            setShowAlert(true);
+                            await addToCart(product);
+                            const res = await getCartProducts();
+                            setCart(res.data)
+                        }}/>
+                </ProductContainer>
 
-            <Description>
-                <div>
-                    <h2>{title}</h2>
-                    <span>{price}</span>
-                </div>
-                <span>{description}</span>
-            </Description>
+                <Description>
+                    <div>
+                        <h2>{title}</h2>
+                        <span>{price}</span>
+                    </div>
+                    <span>{description}</span>
+                </Description>
 
+                <AddedToCart 
+                    disable={showAlert} 
+                    setDisable={setShowAlert}
+                    url = {url}
+                    title = {title}
+                    price = {price}
+                />
+            </Main>
             <Footer/>
-
-            <AddedToCart 
-                disable={showAlert} 
-                setDisable={setShowAlert}
-                url = {url}
-                title = {title}
-                price = {price}
-            />
-
-        </Main>
+        </>
     )
 }
 
 const Main = styled.div`
     width: 100vw;
     min-height: 100vh;
+    padding-bottom: 50px;
     font-family: 'hind';
     background-color: #fcd9b8;
 `
@@ -94,8 +95,8 @@ const ProductContainer = styled.div`
 const Description = styled.div`
 
     width: 100%;
+    height: auto;
     padding: 20px;
-    padding-bottom: 70px;
     color: #292c35;
     
     >div {
