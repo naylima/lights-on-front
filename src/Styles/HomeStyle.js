@@ -36,7 +36,6 @@ export const Header = styled.div `
 export const Container = styled.div`
 
     width: 100%;
-    min-height: 100vh;
     margin-top: 100px;
     padding-bottom: 90px;
     display: flex;
@@ -48,17 +47,18 @@ export const Container = styled.div`
 export const ProductCard = styled.div`
 
     width: 160px;
-    height: 250px;
+    height: auto;
     margin: 10px 15px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: #292C35;
     border-radius: 5px;
     box-sizing: border-box;
 
     img {
         width: 100%;
-        height: 80%;
+        height: 170px;
         padding: 8px;
         object-fit: cover;
         cursor: pointer;

@@ -155,7 +155,6 @@ const SearchBar = styled.div`
 `
 const Results = styled.div`
     width: 100vw;
-    height: 100vh;
     overflow: scroll;   
 `
 const NotFound = styled.div`
