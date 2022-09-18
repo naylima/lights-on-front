@@ -48,7 +48,7 @@ export const Container = styled.div`
 export const ProductCard = styled.div`
 
     width: 160px;
-    height: 250px;
+    height: auto;
     margin: 10px 15px;
     display: flex;
     flex-direction: column;
