@@ -28,7 +28,7 @@ export default function Cart({disable, setDisable}) {
 
     return(
         <Wrapper isDisabled={disable}>
-            <CartDisable isDisabled={disable} onClick={()=>{setDisable(false);console.log(disable)}}>
+            <CartDisable isDisabled={disable} onClick={()=>{setDisable(false)}}>
 
             </CartDisable>
             <CartPage isDisabled={disable}>
@@ -61,7 +61,7 @@ const CartDisable = styled.div`
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background-color: ${props => props.isDisabled ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0.0)'}
+    background-color: ${props => props.isDisabled ? 'rgba(0, 0, 0, 0.7)' : 'rgba(0, 0, 0, 0.0)'};
 `
 
 const CartPage = styled.div`

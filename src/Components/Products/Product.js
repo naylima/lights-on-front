@@ -1,22 +1,25 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../../Contexts/CartContext";
 import { addToCart, getCartProducts } from "../../Common/Service/Service";
 import styled from "styled-components";
 import { BsArrowLeft, BsPlusCircle } from 'react-icons/bs';
 import Footer from "../Footer/Footer";
+import AddedToCart from "./AddedToCart";
 
 export default function Product () {
 
     const navigate = useNavigate();
     const {setCart} = useContext(CartContext)
     const { product, url, title, price, description } =  useLocation().state;
+    const [showAlert, setShowAlert] = useState(false);
     
     return (
         <Main>
             <ProductContainer url={url}>
                 <BsArrowLeft className="icon" onClick={()=> navigate("/home")}/>
                 <BsPlusCircle className="plus" onClick={async ()=>{
+                        setShowAlert(true);
                         await addToCart(product);
                         const res = await getCartProducts();
                         setCart(res.data)
@@ -32,6 +35,14 @@ export default function Product () {
             </Description>
 
             <Footer/>
+
+            <AddedToCart 
+                disable={showAlert} 
+                setDisable={setShowAlert}
+                url = {url}
+                title = {title}
+                price = {price}
+            />
 
         </Main>
     )
