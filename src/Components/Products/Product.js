@@ -94,9 +94,8 @@ const ProductContainer = styled.div`
 const Description = styled.div`
 
     width: 100%;
-    height: auto;
     padding: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 70px;
     color: #292c35;
     
     >div {
