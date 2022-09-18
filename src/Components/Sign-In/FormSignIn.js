@@ -9,7 +9,6 @@ export default function FormSignIn(){
     const navigate = useNavigate()
 
     function handleForm({ name, value }){
-        console.log(name, value)
         setForm({
           ...form,
           [name]: value,
@@ -18,7 +17,6 @@ export default function FormSignIn(){
 
     function sendForm(e) {
         e.preventDefault();
-        console.log(form);
         const body = {
             ...form,
         }
@@ -40,13 +38,13 @@ export default function FormSignIn(){
                 name: e.target.name,
                 value: e.target.value,
             }))}/>
-            <input type="password" name="password" placeholder=' Senha' required
+            <input type="password" name="password" placeholder=' Password' required
             onChange={(e => handleForm({
                 name: e.target.name,
                 value: e.target.value,
             }))}/>
             <LButton type="submit">
-                <div>Entrar</div>
+                <div>Log In</div>
             </LButton>
         </form>
         </Form>
@@ -91,6 +89,12 @@ const LButton = styled.button`
     border-radius: 5px;
     margin-top: 3vh;
     cursor: pointer;
+
+    :active {
+        transform: scale(0.98);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    }
+
 div {
     font-family: 'Hind', sans-serif;
     color: white;

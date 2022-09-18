@@ -9,7 +9,6 @@ export default function FormSignUp() {
     const navigate = useNavigate()
 
     function handleForm({ name, value }){
-        console.log(name, value)
         setForm({
           ...form,
           [name]: value,
@@ -18,7 +17,6 @@ export default function FormSignUp() {
 
     function sendForm(e) {
         e.preventDefault();
-        console.log(form);
         if (form.password !== form.confirm_password){
             alert("Senhas não correspondem. Verifique seus dados.")
             return
@@ -36,7 +34,7 @@ export default function FormSignUp() {
     return (
         <Form>
         <form onSubmit={sendForm}>
-        <input type="name" name="name" placeholder=' Nome' required
+        <input type="name" name="name" placeholder=' Name' required
             onChange={(e => handleForm({
                 name: e.target.name,
                 value: e.target.value,
@@ -46,18 +44,18 @@ export default function FormSignUp() {
                 name: e.target.name,
                 value: e.target.value,
             }))}/>
-            <input type="password" name="password" placeholder=' Senha' required
+            <input type="password" name="password" placeholder=' Password' required
             onChange={(e => handleForm({
                 name: e.target.name,
                 value: e.target.value,
             }))}/>
-            <input type="password" name="confirm_password" placeholder=' Confirme a senha' required
+            <input type="password" name="confirm_password" placeholder=' Repeat password ' required
             onChange={(e => handleForm({
                 name: e.target.name,
                 value: e.target.value,
             }))}/>
             <LButton type="submit">
-                <div>Cadastrar</div>
+                <div>Sign Up</div>
             </LButton>
         </form>
         </Form>
@@ -103,6 +101,12 @@ const LButton = styled.button`
     border-radius: 5px;
     margin-top: 3vh;
     cursor: pointer;
+
+    :active {
+        transform: scale(0.98);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    }
+
 div {
     font-family: 'Hind', sans-serif;
     color: white;
