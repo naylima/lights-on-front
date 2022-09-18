@@ -94,7 +94,7 @@ const LButton = styled.button`
     align-items: center;
     text-align: center;
     border-radius: 5px;
-    margin-bottom: 3vh;
+    margin-bottom: 5vh;
     cursor: pointer;
 div {
     font-family: 'Hind', sans-serif;
@@ -109,7 +109,7 @@ const CartProductsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 74vh;
+    height: 72vh;
     width: 64vw;
     border-radius: 3px;
     overflow: scroll;
