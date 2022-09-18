@@ -49,7 +49,7 @@ export default function Product () {
 }
 
 const Main = styled.div`
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     font-family: 'hind';
     background-color: #fcd9b8;

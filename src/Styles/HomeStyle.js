@@ -48,16 +48,17 @@ export const Container = styled.div`
 export const ProductCard = styled.div`
 
     width: 160px;
-    height: auto;
+    height: 250px;
     margin: 10px 15px;
     display: flex;
     flex-direction: column;
     background-color: #292C35;
     border-radius: 5px;
+    box-sizing: border-box;
 
     img {
         width: 100%;
-        height: 90%;
+        height: 80%;
         padding: 8px;
         object-fit: cover;
         cursor: pointer;
