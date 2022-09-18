@@ -44,7 +44,7 @@ export default function FormSignIn(){
                 value: e.target.value,
             }))}/>
             <LButton type="submit">
-                <div>Log In</div>
+                <div>Sign In</div>
             </LButton>
         </form>
         </Form>

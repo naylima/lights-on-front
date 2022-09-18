@@ -1,6 +1,9 @@
+import * as React from "react";
+import { Navigate } from "react-router-dom";
+
 function renderError() {
     localStorage.clear("lightson");
-    return <h1>VOCÊ NÃO É AUTORIZADO</h1>;
+    return <Navigate to="/" />;
 }
 
 export default function PrivatePage({ children }) {

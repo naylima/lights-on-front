@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 
@@ -13,7 +13,7 @@ export default function AddedToCart({disable, setDisable, url, title, price}) {
                 onClick={()=>{setDisable(false)}} 
             />
             <AlertBox isDisabled={disable}>
-                <h1>The product has been added to the shopping cart</h1>
+                <h1>THE PRODUCT HAS BEEN ADDED TO THE SHOPPING CART</h1>
                 <div>
                     <img src={url}/>
                     <div>
@@ -21,8 +21,8 @@ export default function AddedToCart({disable, setDisable, url, title, price}) {
                         <p>{price}</p>
                     </div>
                 </div>
-                <button onClick={() => navigate("/checkout")}>go to checkout</button>
-                <button onClick={() => navigate("/home")}>continue shopping</button>
+                <button onClick={() => navigate("/checkout")}>GO TO CHECKOUT</button>
+                <button onClick={() => navigate("/home")}>CONTINUE SHOPPING</button>
             </AlertBox>
         </Wrapper>
     )
@@ -51,7 +51,7 @@ const AlertBox = styled.div`
     align-items: center;
     justify-content: space-around;
     transition: all 0.4s;
-    background-color: #E09145;
+    background-color: #292c35;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     z-index: 3;
@@ -60,9 +60,9 @@ const AlertBox = styled.div`
     bottom: ${props => props.isDisabled ? '0' : '-100vh'};
 
     h1 {
-        font-size: 22px;
+        font-size: 23px;
         font-weight: 500;
-        color: #fcd9b8;
+        color: #E09145;
         text-align: center;
     }
 
@@ -84,19 +84,19 @@ const AlertBox = styled.div`
         font-size: 20px;
         font-weight: 400;
         padding-bottom: 10px;
-        color:  #292c35;
+        color:  #fcd9b8;
     }
 
     button {
-        width: 60vw;
+        width: 90vw;
         height: 5vh;
         border: none;
         border-radius: 5px;
-        color: #E09145;
-        background-color: #fcd9b8;
+        color: #fcd9b8;
+        background-color:#E09145;
         cursor: pointer;
 
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 400;
 
         :active {

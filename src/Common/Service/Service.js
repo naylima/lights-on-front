@@ -25,12 +25,14 @@ function signUp (body) {
 }
 
 function getProducts () {
-  const request = axios.get(`${BASE_URL}/products`);
+  const config = createHeaders()
+  const request = axios.get(`${BASE_URL}/products`, config);
   return request;
 }
 
 function searchProducts(query) {
-  const request = axios.get(`${BASE_URL}/products?keyword=${query}`);
+  const config = createHeaders()
+  const request = axios.get(`${BASE_URL}/products?keyword=${query}`, config);
   return request;
 }
 

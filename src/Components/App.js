@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import CartContext from "../Contexts/CartContext.js";
 import GlobalStyle from "../Styles/GlobalStyle.js";
+import PrivatePage from "../Common/PrivatePage.js";
 import AuthSelector from "./AuthSelect.js";
 import SignIn from "./Sign-In/SignIn.js";
 import SignUp from "./Sign-Up/SignUp.js";
@@ -24,10 +25,38 @@ export default function App() {
                     <Route path="/" element={<AuthSelector />} ></Route>
                     <Route path="/sign-in" element={<SignIn />} ></Route>
                     <Route path="/sign-up" element={<SignUp />} ></Route>
-                    <Route path="/home" element={<Home />}></Route>
-                    <Route path="/:productId" element={<Product />}></Route>
-                    <Route path="/checkout" element={<Checkout />}></Route>
-                    <Route path="/success" element={<Success />}></Route>
+                    <Route 
+                        path="/home" 
+                        element={
+                            <PrivatePage>
+                                <Home />
+                            </PrivatePage>
+                        }>
+                    </Route>
+                    <Route 
+                        path="/:productId" 
+                        element={
+                            <PrivatePage>
+                                <Product />
+                            </PrivatePage>
+                        }>
+                    </Route>
+                    <Route 
+                        path="/checkout" 
+                        element={
+                            <PrivatePage>
+                                <Checkout />
+                            </PrivatePage>
+                        }>
+                    </Route>
+                    <Route 
+                        path="/success" 
+                        element={
+                            <PrivatePage>
+                                <Success />
+                            </PrivatePage>
+                        }>
+                    </Route>
                 </Routes>
             </BrowserRouter>
         </CartContext.Provider>

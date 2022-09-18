@@ -13,12 +13,12 @@ export default function AuthSelector() {
             <div>
                 <Link to="/sign-in">
                     <SignInButton>
-                        <div>Sign-in</div>
+                        <div>Sign In</div>
                     </SignInButton>
                 </Link>
                 <Link to="/sign-up">
                     <SignUpButton>
-                        <div>Sign-up</div>
+                        <div>Sign Up</div>
                     </SignUpButton>
                 </Link>
             </div>        

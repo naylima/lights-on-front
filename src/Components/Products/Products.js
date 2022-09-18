@@ -5,14 +5,14 @@ import { BsPlusCircle } from 'react-icons/bs';
 import { addToCart, getCartProducts } from '../../Common/Service/Service';
 import CartContext from "../../Contexts/CartContext";
 
-export default function Products ({product, id}) {
+export default function Products ({product}) {
 
     const navigate = useNavigate();
     const { setCart } = useContext(CartContext);
 
     return (
 
-        <ProductCard key={id}>
+        <ProductCard>
             <img 
                 src={product.url} 
                 onClick={() => {

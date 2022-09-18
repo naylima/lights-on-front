@@ -53,7 +53,6 @@ export const ProductCard = styled.div`
     display: flex;
     flex-direction: column;
     background-color: #292C35;
-    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 
     img {
@@ -63,6 +62,7 @@ export const ProductCard = styled.div`
         object-fit: cover;
         cursor: pointer;
         transition: hover .2s;
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
 
         :hover {
             filter: brightness(1.2);
